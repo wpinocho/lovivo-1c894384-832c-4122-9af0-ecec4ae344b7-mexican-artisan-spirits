@@ -45,7 +45,7 @@ export const EcommerceTemplate = ({
   const { hasCollections, loading: loadingCollections } = useCollections()
 
   const header = (
-    <div className={`py-2 ${headerClassName}`}>
+    <div className={`py-4 bg-card/50 backdrop-blur-sm ${headerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -57,22 +57,22 @@ export const EcommerceTemplate = ({
               {!loadingCollections && hasCollections && (
                 <ScrollLink 
                   to="/#collections" 
-                  className="text-foreground/70 hover:text-foreground transition-colors"
+                  className="text-muted-foreground hover:text-primary transition-colors font-medium"
                 >
                   Collections
                 </ScrollLink>
               )}
               <ScrollLink 
                 to="/#products" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors font-medium"
               >
-                Products
+                Shop
               </ScrollLink>
               <Link 
                 to="/blog" 
-                className="text-foreground/70 hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-primary transition-colors font-medium"
               >
-                Blog
+                Our Story
               </Link>
             </nav>
           </div>
@@ -113,45 +113,70 @@ export const EcommerceTemplate = ({
   )
 
   const footer = (
-    <div className={`bg-black text-white py-12 ${footerClassName}`}>
+    <div className={`bg-card border-t border-border py-16 ${footerClassName}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
-          <div>
+          <div className="md:col-span-2">
             <BrandLogoLeft />
-            <p className="mt-4 text-white/70">
-              Your trusted online store
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Authentic Mexican alebrijes handcrafted by talented artisans in Oaxaca. 
+              Each purchase supports local communities and preserves traditional art forms.
             </p>
+            <div className="mt-6">
+              <h4 className="font-semibold text-foreground mb-3">Our Commitment</h4>
+              <div className="flex flex-wrap gap-2">
+                <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium">Fair Trade</span>
+                <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium">Eco-Friendly</span>
+                <span className="bg-primary/10 text-primary text-xs px-3 py-1 rounded-full font-medium">Handcrafted</span>
+              </div>
+            </div>
           </div>
 
-          {/* Links */}
+          {/* Quick Links */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Links</h3>
-            <div className="space-y-2">
+            <h3 className="font-bold text-foreground mb-4">Quick Links</h3>
+            <div className="space-y-3">
               <Link 
                 to="/" 
-                className="block text-white/70 hover:text-white transition-colors"
+                className="block text-muted-foreground hover:text-primary transition-colors"
               >
                 Home
               </Link>
               <Link 
-                to="/blog" 
-                className="block text-white/70 hover:text-white transition-colors"
+                to="/#products" 
+                className="block text-muted-foreground hover:text-primary transition-colors"
               >
-                Blog
+                Shop Alebrijes
+              </Link>
+              <Link 
+                to="/blog" 
+                className="block text-muted-foreground hover:text-primary transition-colors"
+              >
+                Our Story
               </Link>
             </div>
           </div>
 
-          {/* Social Links */}
+          {/* Connect */}
           <div>
-            <h3 className="font-semibold mb-4 text-white">Follow Us</h3>
+            <h3 className="font-bold text-foreground mb-4">Connect With Us</h3>
             <SocialLinks />
+            <p className="mt-4 text-sm text-muted-foreground">
+              Follow us to see the artisans at work and discover new pieces
+            </p>
           </div>
         </div>
 
-        <div className="mt-8 pt-8 border-t border-white/20 text-center text-white/70">
-          <p>&copy; 2024 Your Store. All rights reserved.</p>
+        <div className="pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-muted-foreground text-sm">
+              © 2024 Alebrijes Artesanales. All rights reserved.
+            </p>
+            <p className="text-muted-foreground text-sm">
+              🇲🇽 Handcrafted with love in Oaxaca, Mexico
+            </p>
+          </div>
         </div>
       </div>
     </div>

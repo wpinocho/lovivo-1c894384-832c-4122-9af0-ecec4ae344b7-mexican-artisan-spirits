@@ -1,16 +1,19 @@
 export const BrandLogoLeft = () => {
   return (
-    <a href="/" aria-label="Home" className="ml-2 flex items-center">
-      {/* TEMPLATE: Replace /logo.svg with your brand logo */}
-      <img 
-        src="/logo.svg" 
-        alt="Logo"
-        className="h-8 w-auto object-contain" 
-        onError={(e) => {
-          e.currentTarget.style.display = 'none';
-          e.currentTarget.parentElement!.innerHTML = '<span class="text-xl font-bold text-black">YourBrand</span>';
-        }}
-      />
+    <a href="/" aria-label="Home" className="flex items-center group">
+      <div className="flex items-center gap-3">
+        <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-primary to-primary/60 flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform">
+          <span className="text-primary-foreground font-bold text-xl">A</span>
+        </div>
+        <div className="flex flex-col">
+          <span className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+            Alebrijes
+          </span>
+          <span className="text-xs text-muted-foreground font-medium -mt-1">
+            Artesanales
+          </span>
+        </div>
+      </div>
     </a>
   )
 }

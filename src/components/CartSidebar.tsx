@@ -60,12 +60,12 @@ export const CartSidebar = ({ isOpen, onClose }: CartSidebarProps) => {
 
   return (
     <Sheet open={isOpen} onOpenChange={onClose}>
-      <SheetContent side="right" className="w-full sm:w-96 p-0" aria-describedby="cart-description">
+      <SheetContent side="right" className="w-full sm:w-96 p-0 bg-card border-border" aria-describedby="cart-description">
         <div className="flex flex-col h-full">
-          <SheetHeader className="p-6 border-b">
-            <SheetTitle className="flex items-center gap-2">
+          <SheetHeader className="p-6 border-b border-border">
+            <SheetTitle className="flex items-center gap-2 text-foreground">
               Shopping Cart
-              <Link to="/cart" onClick={onClose} className="hover:opacity-70 transition-opacity">
+              <Link to="/cart" onClick={onClose} className="hover:text-primary transition-colors">
                 <ExternalLink className="h-4 w-4" />
               </Link>
             </SheetTitle>
